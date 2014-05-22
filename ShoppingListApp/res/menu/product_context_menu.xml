@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+     <item android:id="@+id/product_bought"
+          android:title="@string/bought" />
+    <item android:id="@+id/update_product"
+          android:title="@string/update_product" />
+    <item android:id="@+id/delete_product"
+          android:title="@string/delete_product" />
+</menu>

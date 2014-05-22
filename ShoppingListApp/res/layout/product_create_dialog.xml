@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" >
+ 
+    <TextView
+        android:paddingTop="@dimen/top_padding"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:id="@+id/product_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText 
+        android:layout_toRightOf="@id/product_name_view"
+        android:layout_alignTop="@id/product_name_view"
+        android:inputType="text"
+        android:id="@+id/productname_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      	<requestFocus />
+	</EditText>
+     
+    <TextView
+        android:layout_below="@id/productname_input"
+        android:id="@+id/product_number_view"
+        android:paddingTop="@dimen/top_padding"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:text="@string/product_number"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText
+        android:layout_alignTop="@id/product_number_view"
+        android:layout_toRightOf="@id/product_number_view"
+        android:id="@+id/productnumber_input"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:layout_below="@id/product_number_view"
+        android:id="@+id/product_unit_view"
+        android:paddingTop="@dimen/top_padding"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:text="@string/product_number"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <Spinner
+        android:layout_alignTop="@id/product_unit_view"
+        android:layout_toRightOf="@id/product_unit_view"
+    	android:id="@+id/units_spinner"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:entries="@array/units" />
+    
+ 
+</RelativeLayout>

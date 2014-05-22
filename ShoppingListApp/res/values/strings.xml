@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ShoppingList</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_listname">Enter a name for the list</string>
+    <string name="create_list">Create List</string>
+    <string name="ok">OK</string>
+    <string name="bought">bought</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_text">You have to enter a text</string>
+    <string name="list_name">Name of the list:</string>
+    <string name="shopping_lists">Shopping Lists</string>
+    <string name="products">Products</string>
+    <string name="delete_list">Delete list</string>
+    <string name="enter_productname">Create a product</string>
+    <string name="product_name">Name of the product:</string>
+    <string name="product_number">Needed number:</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="update_product">Update Product</string>
+    <string name="units">Unit</string>
+     <string-array name="units">
+       <item>Piece</item>
+       <item>Gram</item>
+       <item>Kilogram</item>
+       <item>Millilitre</item>
+       <item>Litre</item>
+   	</string-array>
+
+</resources>
