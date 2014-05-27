@@ -3,7 +3,7 @@ package edu.hm.shopping.entities;
 import edu.hm.shopping.db.DatabaseService;
 import edu.hm.shopping.db.StubDatabase;
 
-public class ListItem {
+public class Product {
 
 	private int id;
 	private String name;

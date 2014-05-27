@@ -18,11 +18,11 @@ import javax.ws.rs.core.UriInfo;
 
 import edu.hm.shopping.db.DatabaseService;
 import edu.hm.shopping.db.StubDatabase;
-import edu.hm.shopping.entities.ListItem;
+import edu.hm.shopping.entities.Product;
 import edu.hm.shopping.utils.UriUtils;
 
-@Path("lists/{listId}/products")
-public class Product {
+@Path("lists/{listId}/items")
+public class ListItem {
 
 	@Context 
 	private UriInfo uriInfo;
@@ -37,7 +37,7 @@ public class Product {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getProducts() {
 		DatabaseService service = new StubDatabase();
-		Collection<ListItem> products;
+		Collection<Product> products;
 		try {
 			products = service.getProducts(listId);
 		} catch (IllegalArgumentException e) {
@@ -49,11 +49,11 @@ public class Product {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response createProduct(final ListItem item) {
+	public Response createProduct(final Product product) {
 		DatabaseService service = new StubDatabase();
-		ListItem createdProduct;
+		Product createdProduct;
 		try {
-			createdProduct = service.createProduct(listId, item);
+			createdProduct = service.createProduct(listId, product);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.BAD_REQUEST).build();
@@ -64,8 +64,9 @@ public class Product {
 	}
 	
 	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("{productId}")
-	public Response updateProduct(final ListItem product) {
+	public Response updateProduct(final Product product) {
 		DatabaseService service = new StubDatabase();
 		try {
 			service.updateProduct(listId, productId, product);

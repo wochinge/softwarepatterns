@@ -12,8 +12,9 @@ import edu.hm.shoppinglist.web.requests.Put;
 
 public class WebserviceImpl implements Webservice {
 
-	public final static String SERVER_URL = "http://yourserver:port/sharedshopping/";
-	public final static String LIST_URL = SERVER_URL + "list/";
+	public final static String SERVER_URL = "http://185.21.101.44:8080/sharedshopping/";
+	public final static String LIST_URL = SERVER_URL + "lists/";
+	public final static String ITEM_URL = "items/";
 
 	public final static int TIMEOUT_IN_MILLIS = 5;
 
@@ -23,7 +24,6 @@ public class WebserviceImpl implements Webservice {
 			OnFailListener failListener) {
 		Get<ShoppingList[]> listGet = new Get<ShoppingList[]>(resultListener, failListener, ShoppingList[].class);
 		listGet.execute(LIST_URL);
-
 	}
 
 	@Override
@@ -48,7 +48,6 @@ public class WebserviceImpl implements Webservice {
 		Get<Product[]> listGet = new Get<Product[]>(resultListener, failListener, Product[].class);
 		String url = getProductUrl(list);
 		listGet.execute(url);
-
 	}
 
 	@Override
@@ -84,11 +83,11 @@ public class WebserviceImpl implements Webservice {
 	}
 
 	private String getProductUrl(final ShoppingList list, final Product product) {
-		return getListUrl(list) + "product/" + String.valueOf(product.getId());
+		return getListUrl(list) + ITEM_URL + String.valueOf(product.getId());
 	}
 
 	private String getProductUrl(final ShoppingList list) {
-		return getListUrl(list) + "product/";
+		return getListUrl(list) + ITEM_URL;
 	}
 
 }

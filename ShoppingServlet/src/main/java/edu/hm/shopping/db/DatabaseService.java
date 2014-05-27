@@ -2,7 +2,7 @@ package edu.hm.shopping.db;
 
 import java.util.Collection;
 
-import edu.hm.shopping.entities.ListItem;
+import edu.hm.shopping.entities.Product;
 import edu.hm.shopping.entities.ShoppingList;
 
 public interface DatabaseService {
@@ -13,11 +13,11 @@ public interface DatabaseService {
 	
 	void deleteList(final int listId);
 	
-	Collection<ListItem> getProducts(final int listId);
+	Collection<Product> getProducts(final int listId);
 	
-	ListItem createProduct(final int listId, ListItem product);
+	Product createProduct(final int listId, Product product);
 	
-	void updateProduct(final int listId, final int productId, final ListItem product);
+	void updateProduct(final int listId, final int productId, final Product product);
 	
 	void deleteProduct(final int listId, final int productId);
 	

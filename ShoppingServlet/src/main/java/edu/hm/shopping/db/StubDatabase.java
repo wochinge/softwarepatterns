@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-import edu.hm.shopping.entities.ListItem;
+import edu.hm.shopping.entities.Product;
 import edu.hm.shopping.entities.ShoppingList;
 
 /**
@@ -15,7 +15,7 @@ import edu.hm.shopping.entities.ShoppingList;
 public class StubDatabase implements DatabaseService {
 
 	private static HashMap<Integer, ShoppingList> lists = new HashMap<Integer, ShoppingList>();
-	private static HashMap<Integer, HashMap<Integer, ListItem>> products = new HashMap<Integer, HashMap<Integer,ListItem>>();
+	private static HashMap<Integer, HashMap<Integer, Product>> products = new HashMap<Integer, HashMap<Integer,Product>>();
 	private static HashMap<Integer, Integer> possibleProductId = new HashMap<Integer, Integer>();
 	private static int id = 1;
 	private static HashMap<Integer, String> units = new HashMap<Integer, String>() {
@@ -36,7 +36,7 @@ public class StubDatabase implements DatabaseService {
 		list.setId(id);
 
 		lists.put(id, list);
-		products.put(id, new HashMap<Integer, ListItem>());
+		products.put(id, new HashMap<Integer, Product>());
 		id++;
 		return list;
 		
@@ -48,12 +48,12 @@ public class StubDatabase implements DatabaseService {
 		
 	}
 
-	public Collection<ListItem> getProducts(final int listId) {
+	public Collection<Product> getProducts(final int listId) {
 		validateListId(listId);
 		return products.get(listId).values();
 	}
 
-	public ListItem createProduct(final int listId, final ListItem product) {
+	public Product createProduct(final int listId, final Product product) {
 		validateListId(listId);
 		ShoppingList list = lists.get(listId);
 		List<Integer> productReferences = list.getProductIds();
@@ -69,7 +69,7 @@ public class StubDatabase implements DatabaseService {
 		
 	}
 
-	public void updateProduct(final int listId, final int productId, ListItem product) {
+	public void updateProduct(final int listId, final int productId, Product product) {
 		validateListId(listId);
 		validateProductId(listId, productId);
 		product.setId(productId);

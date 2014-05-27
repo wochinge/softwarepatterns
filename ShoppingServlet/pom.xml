@@ -37,11 +37,11 @@
 			<artifactId>tomcat7-maven-plugin</artifactId>
 			<version>2.2</version>
 			<configuration>
-				<url>http://tomcatserver:port/manager/text</url>
+				<url>http://server:port/manager/text</url>
 				<path>/sharedshopping</path>
 				<update>true</update>
-				<username>usernam</username>
-				<password>password</password>
+				<username>username</username>
+				<password>pass</password>
 			</configuration>
 		</plugin>
 		<plugin>
